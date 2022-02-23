@@ -9,6 +9,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -17,15 +18,20 @@
 </head>
 <body>
 
+<section class="main">
+    <div class="titleContainer">
+        <h2 class="title">What Is Your Mood At The Moment?</h2>
+    </div>
 
-    <h1>How are you feeling at the moment?</h1>
+    <div class="faces">
+        <img class="face joy" data-mood="joy" src="/assets/joy.png" href="#modal1" alt="">
+        <img class="face love" data-mood="love" src="/assets/love.png" href="#modal1" alt="">
+        <img class="face fear" data-mood="fear" src="/assets/fear.png" href="#modal1" alt="">
+        <img class="face hate" data-mood="hate" src="/assets/hate.png" href="#modal1" alt="">
+    </div>
 
+</section>
 
-
-      <img class="joy modal-trigger" data-mood="joy" src="/assets/joy.png" href="#modal1" alt="" width="20%">
-      <img class="love modal-trigger" data-mood="love" src="/assets/love.png" href="#modal1" alt="" width="20%">
-      <img class="fear modal-trigger" data-mood="fear" src="/assets/fear.png" href="#modal1" alt="" width="20%">
-      <img class="hate modal-trigger" data-mood="hate" src="/assets/hate.png" href="#modal1" alt="" width="20%">
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">

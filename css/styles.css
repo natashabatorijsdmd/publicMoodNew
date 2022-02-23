@@ -1,0 +1,32 @@
+@font-face {
+    src: url(/assets/fonts/Garet-Heavy.ttf);
+    font-family: Garet;
+  }
+
+.body{
+ background-image: url(/assets/backgroundGradient.png)
+}
+
+.main{
+    padding-top: 10%;
+    margin: auto auto auto auto;
+    height: 80vh;
+}
+
+.title{
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: Garet;
+    letter-spacing: 0.5px;
+}
+
+.faces{
+    display: block;
+    text-align: center;
+}
+
+.face{
+    width: 23%;
+    padding-left: 5px;
+    padding-right: 5px;
+}

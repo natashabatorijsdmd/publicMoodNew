@@ -4,34 +4,56 @@ const love = document.querySelector(".love");
 const fear = document.querySelector(".fear");
 const hate = document.querySelector(".hate");
 
-const modal = document.querySelector('.modal');
+var modal;
 
-// const timer = setTimeout(closeModal, 1000);
-
-// function closeModal() {
-//   modal.close()
-// }
+//Script for the modal
+document.addEventListener('DOMContentLoaded', function() {
+    var elem = document.querySelector('.modal');
+    modal = M.Modal.init(elem);
+    console.log(modal);
+  });
 
 //Adding Moods to the database
 
 joy.addEventListener('click', (e) => {
-    mood = e.target.getAttribute("data-mood")
-   saveMood(mood)
+
+    mood = e.target.getAttribute("data-mood");
+   saveMood(mood);
+   modal.open();
+   setTimeout(() => {
+       modal.close()
+   }, 2000)
+   clearTimeout();
 })
 
 love.addEventListener('click', (e) => {
-    mood = e.target.getAttribute("data-mood")
-   saveMood(mood)
+    mood = e.target.getAttribute("data-mood");
+   saveMood(mood);
+   modal.open();
+   setTimeout(() => {
+       modal.close()
+   }, 2000)
+   clearTimeout();
 })
 
 fear.addEventListener('click', (e) => {
-    mood = e.target.getAttribute("data-mood")
-   saveMood(mood)
+    mood = e.target.getAttribute("data-mood");
+   saveMood(mood);
+   modal.open();
+   setTimeout(() => {
+       modal.close()
+   }, 2000)
+   clearTimeout();
 })
 
 hate.addEventListener('click', (e) => {
-    mood = e.target.getAttribute("data-mood")
-   saveMood(mood)
+    mood = e.target.getAttribute("data-mood");
+   saveMood(mood);
+   modal.open();
+   setTimeout(() => {
+       modal.close()
+   }, 2000)
+   clearTimeout();
 })
 
 //Function to save selected mood
@@ -46,13 +68,3 @@ function saveMood(mood){
        })
 }
 
-//Script for the modal
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
-  });
-
-  if (modal.classList.contains("open")){
-    // setTimeout(closeModal, 1000);
-    console.log("is open")
-  }
