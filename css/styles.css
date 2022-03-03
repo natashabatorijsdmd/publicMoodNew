@@ -3,10 +3,6 @@
     font-family: Garet;
   }
 
-.body{
- background-image: url(/assets/backgroundGradient.png)
-}
-
 .main{
     padding-top: 10%;
     margin: auto auto auto auto;
@@ -29,4 +25,36 @@
     width: 23%;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+.modal{
+    width: 75%;
+    height: 75%;
+}
+
+.thankyou{
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: Garet;
+    letter-spacing: 0.5px;
+}
+
+.moodIs{
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: Garet;
+    letter-spacing: 0.5px;
+}
+
+.buildingMood{
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.closeBtn{
+    text-align: center;
+    font-family: Garet;
+    font-size: large;
+    letter-spacing: 0.5px;
 }
