@@ -1,4 +1,3 @@
-
 const joy = document.querySelector(".joy");
 const love = document.querySelector(".love");
 const fear = document.querySelector(".fear");
@@ -68,31 +67,50 @@ function saveMood(mood){
        })
 }
 
-// Hi Chris, I'm sorry this is a mess I kind of started to figure it out but my brain was 
-// so foggy I couldn't make any sense of anything (kind of felt dizzy even reading it)
-// I have put down some comments and stuff from what I could originally figure out about the process
-// but there is a fair chunk left to do, i think. I really appreciate you looking at it for me... 
 
-const colRef = collection(db, 'moods') 
-const q = query(colRef, orderBy('createdAt'))
+let currentDate = new Date.now();
+let timePeriod = currentDate - 7200000;
+
+const colRef = collection(db, "moods");
+const q = query(colRef, where("createdAt", ">=", timePeriod));
+
+function mode(array){
+    //find Javascript array method that will 
+    //extract most common emotion
+}
+
+function getMoods(){
+
+    db.collection("moods")
+    .onSnapshot((querySnapshot) => {
+        getDocs(q); // Not sure if this is right? as dont understand 
+        //how this will affect the array 'currentMoods' to be shorter and only 
+        //include the timePeriod objects
+        var currentMoods = [];
+        querySnapshot.forEach((doc) => {
+            currentMoods.push(doc.data().emotion);
+        });
+        console.log(mode); 
+    });
+ 
+
+    if(mode == joy){
+        //create HTML element using createElement
+    }
+
+    if(mode == love){
+        //create HTML element using createElement
+    }
+
+    if(mode == fear){
+        //create HTML element using createElement
+    }
+
+    if(mode == hate){
+        //create HTML element using createElement
+    }
 
 
-// get a snapshot of the data (from all time)
-onSnapshot(q, (snapshot) => {
-    let moods = [] //array for all data from all time
-    snapshot.docs.forEach((doc) => {
-        moods.push({ ...doc.data(), id:doc.id })
-    })
-    console.log(moods) // this isn't working yet
-})
+getMoods();
 
-onSnapshot(q, (snapshot) => {
-    let recentMoods = [] //push data from last 3 hours only to this array
-    snapshot.docs.forEach((doc) => {
-        moods.push({ ...doc.data(), id:doc.id })
- }) 
-})
-
-// maybe need a for loop to look inside the array and count how many times each element appears???
-
-var currentMood //make this variable for when we find the most frequent element in the array
+}
