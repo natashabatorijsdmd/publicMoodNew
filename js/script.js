@@ -114,22 +114,22 @@ var currentMoodContainer = document.querySelector("#currentMoodContainer")
         // console.log(mostCommon); 
         if(mostCommon == "joy"){
             console.log("current mood is joy")
-            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/joy.png" alt="" width="20%">`
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/publicMoodNew/assets/joy.png" alt="" width="20%">`
         }
     
         if(mostCommon == "love"){
             console.log("current mood is love")
-            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/love.png" alt="" width="20%">`
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/publicMoodNew/assets/love.png" alt="" width="20%">`
         }
     
         if(mostCommon == "fear"){
             console.log("current mood is fear")
-            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/fear.png" alt="" width="20%">`
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/publicMoodNew/assets/fear.png" alt="" width="20%">`
         }
     
         if(mostCommon == "hate"){
             console.log("current mood is hate")
-            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/hate.png" alt="" width="20%">`
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/publicMoodNew/assets/hate.png" alt="" width="20%">`
         }
     });
  
