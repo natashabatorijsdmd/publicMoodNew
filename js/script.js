@@ -22,7 +22,8 @@ joy.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   clearTimeout();
+   modal.onCloseEnd( () => {
+       clearTimeout});
 })
 
 love.addEventListener('click', (e) => {
@@ -32,7 +33,8 @@ love.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   clearTimeout();
+   modal.onCloseEnd( () => {
+    clearTimeout});
 })
 
 fear.addEventListener('click', (e) => {
@@ -42,7 +44,8 @@ fear.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   clearTimeout();
+   modal.onCloseEnd( () => {
+    clearTimeout});
 })
 
 hate.addEventListener('click', (e) => {
@@ -52,7 +55,8 @@ hate.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   clearTimeout();
+   modal.onCloseEnd( () => {
+    clearTimeout});
 })
 
 //Function to save selected mood
@@ -68,49 +72,75 @@ function saveMood(mood){
 }
 
 
-let currentDate = new Date.now();
-let timePeriod = currentDate - 7200000;
+let currentDate = new Date().getTime();
+console.log(currentDate);
+let timePeriod = new Date(currentDate - 7200000);
+console.log(timePeriod.toString());
 
-const colRef = collection(db, "moods");
-const q = query(colRef, where("createdAt", ">=", timePeriod));
 
-function mode(array){
-    //find Javascript array method that will 
-    //extract most common emotion
+// const colRef = db.collection("moods");
+// const q = colRef.where("createdAt", ">=", timePeriod);
+// console.log(q.data());
+
+
+function mode(array)
+{
+    if(array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for(var i = 0; i < array.length; i++)
+    {
+        var el = array[i];
+        if(modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;  
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+    return maxEl;
 }
 
 function getMoods(){
-
-    db.collection("moods")
+var currentMoodContainer = document.querySelector("#currentMoodContainer")
+    db.collection("moods").where("createdAt", ">=", timePeriod)
     .onSnapshot((querySnapshot) => {
-        getDocs(q); // Not sure if this is right? as dont understand 
-        //how this will affect the array 'currentMoods' to be shorter and only 
-        //include the timePeriod objects
         var currentMoods = [];
         querySnapshot.forEach((doc) => {
             currentMoods.push(doc.data().emotion);
         });
-        console.log(mode); 
+        //console.log(currentMoods);
+        var mostCommon = mode(currentMoods);
+        // console.log(mostCommon); 
+        if(mostCommon == "joy"){
+            console.log("current mood is joy")
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/joy.png" alt="" width="20%">`
+        }
+    
+        if(mostCommon == "love"){
+            console.log("current mood is love")
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/love.png" alt="" width="20%">`
+        }
+    
+        if(mostCommon == "fear"){
+            console.log("current mood is fear")
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/fear.png" alt="" width="20%">`
+        }
+    
+        if(mostCommon == "hate"){
+            console.log("current mood is hate")
+            currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/assets/hate.png" alt="" width="20%">`
+        }
     });
  
 
-    if(mode == joy){
-        //create HTML element using createElement
-    }
+   
 
-    if(mode == love){
-        //create HTML element using createElement
-    }
-
-    if(mode == fear){
-        //create HTML element using createElement
-    }
-
-    if(mode == hate){
-        //create HTML element using createElement
-    }
-
+}
 
 getMoods();
 
-}
