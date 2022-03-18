@@ -22,8 +22,7 @@ joy.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   modal.onCloseEnd( () => {
-       clearTimeout});
+   clearTimeout;
 })
 
 love.addEventListener('click', (e) => {
@@ -33,8 +32,7 @@ love.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   modal.onCloseEnd( () => {
-    clearTimeout});
+   clearTimeout;
 })
 
 fear.addEventListener('click', (e) => {
@@ -44,8 +42,7 @@ fear.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   modal.onCloseEnd( () => {
-    clearTimeout});
+   clearTimeout;
 })
 
 hate.addEventListener('click', (e) => {
@@ -55,8 +52,7 @@ hate.addEventListener('click', (e) => {
    setTimeout(() => {
        modal.close()
    }, 12000)
-   modal.onCloseEnd( () => {
-    clearTimeout});
+   clearTimeout;
 })
 
 //Function to save selected mood
