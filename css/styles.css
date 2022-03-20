@@ -55,6 +55,7 @@
 .closeBtn{
     text-align: center;
     font-family: Garet;
-    font-size: large;
+    font-size: x-large;
     letter-spacing: 0.5px;
+    padding-bottom: 5px;
 }

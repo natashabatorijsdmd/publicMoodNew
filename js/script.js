@@ -19,41 +19,25 @@ joy.addEventListener('click', (e) => {
     mood = e.target.getAttribute("data-mood");
    saveMood(mood);
    modal.open();
-   setTimeout(() => {
-       modal.close()
-   }, 12000)
-   clearTimeout;
-})
+    })
 
 love.addEventListener('click', (e) => {
     mood = e.target.getAttribute("data-mood");
    saveMood(mood);
    modal.open();
-   setTimeout(() => {
-       modal.close()
-   }, 12000)
-   clearTimeout;
-})
+    })
 
 fear.addEventListener('click', (e) => {
     mood = e.target.getAttribute("data-mood");
    saveMood(mood);
    modal.open();
-   setTimeout(() => {
-       modal.close()
-   }, 12000)
-   clearTimeout;
-})
+    })
 
 hate.addEventListener('click', (e) => {
     mood = e.target.getAttribute("data-mood");
    saveMood(mood);
    modal.open();
-   setTimeout(() => {
-       modal.close()
-   }, 12000)
-   clearTimeout;
-})
+    })
 
 //Function to save selected mood
 function saveMood(mood){
@@ -62,7 +46,6 @@ function saveMood(mood){
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
        })
        .then( () => {
-           //this is where i want to open the modal
         console.log("saved")
        })
 }
