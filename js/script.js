@@ -52,14 +52,8 @@ function saveMood(mood){
 
 
 let currentDate = new Date().getTime();
-console.log(currentDate);
-let timePeriod = new Date(currentDate - 7200000);
+let timePeriod = new Date(currentDate - 3600000);
 console.log(timePeriod.toString());
-
-
-// const colRef = db.collection("moods");
-// const q = colRef.where("createdAt", ">=", timePeriod);
-// console.log(q.data());
 
 
 function mode(array)
@@ -92,9 +86,7 @@ var currentMoodContainer = document.querySelector("#currentMoodContainer")
         querySnapshot.forEach((doc) => {
             currentMoods.push(doc.data().emotion);
         });
-        //console.log(currentMoods);
         var mostCommon = mode(currentMoods);
-        // console.log(mostCommon); 
         if(mostCommon == "joy"){
             console.log("current mood is joy")
             currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/publicMoodNew/assets/joy.png" alt="" width="20%">`
@@ -115,7 +107,6 @@ var currentMoodContainer = document.querySelector("#currentMoodContainer")
             currentMoodContainer.innerHTML = `<img class="buildingMood joy" data-mood="joy" src="/publicMoodNew/assets/hate.png" alt="" width="20%">`
         }
     });
- 
 
    
 
