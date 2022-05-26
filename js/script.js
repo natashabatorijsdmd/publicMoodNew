@@ -17,26 +17,26 @@ document.addEventListener('DOMContentLoaded', function() {
 joy.addEventListener('click', (e) => {
 
     mood = e.target.getAttribute("data-mood");
-   saveMood(mood);
-   modal.open();
+    saveMood(mood);
+    modal.open();
     })
 
 love.addEventListener('click', (e) => {
     mood = e.target.getAttribute("data-mood");
-   saveMood(mood);
-   modal.open();
+    saveMood(mood);
+    modal.open();
     })
 
 fear.addEventListener('click', (e) => {
     mood = e.target.getAttribute("data-mood");
-   saveMood(mood);
-   modal.open();
+    saveMood(mood);
+    modal.open();
     })
 
 hate.addEventListener('click', (e) => {
     mood = e.target.getAttribute("data-mood");
-   saveMood(mood);
-   modal.open();
+    saveMood(mood);
+    modal.open();
     })
 
 //Function to save selected mood
@@ -45,7 +45,7 @@ function saveMood(mood){
         emotion: mood,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
        })
-       .then( () => {
+        .then( () => {
         console.log("saved")
        })
 }
@@ -63,18 +63,18 @@ function mode(array)
     var modeMap = {};
     var maxEl = array[0], maxCount = 1;
     for(var i = 0; i < array.length; i++)
-    {
-        var el = array[i];
-        if(modeMap[el] == null)
-            modeMap[el] = 1;
-        else
-            modeMap[el]++;  
-        if(modeMap[el] > maxCount)
         {
-            maxEl = el;
-            maxCount = modeMap[el];
+            var el = array[i];
+            if(modeMap[el] == null)
+                modeMap[el] = 1;
+            else
+                modeMap[el]++;  
+            if(modeMap[el] > maxCount)
+                {
+                    maxEl = el;
+                    maxCount = modeMap[el];
+                }
         }
-    }
     return maxEl;
 }
 
